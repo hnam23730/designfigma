@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import Icon from "react-native-vector-icons/FontAwesome";
 import SearchIcon from '../assets/image/iconSearch.png';
 import FilterIcon from '../assets/image/iconFilter.png';
+import Screen2 from "./Screen2";
 const HomeScreen = () => {
     const navigation = useNavigation();
     const [searchQuery, setSearchQuery] = useState('');
@@ -14,6 +15,9 @@ const HomeScreen = () => {
     const Screen1 = () => {
         navigation.navigate('Screen1');
     };
+    const Screen2 = () => {
+      navigation.navigate('Screen2');
+  };
     const [categories, setCategories] = useState([
     {
       image: require('../assets/image/Card1.png'),
@@ -59,6 +63,7 @@ const HomeScreen = () => {
           <TouchableOpacity
             key={item.name}
             style={styles.category}
+            onPress={Screen2}
           >
             <Image
               style={styles.categoryImage}
@@ -90,10 +95,10 @@ const HomeScreen = () => {
         )}
     />
       <View style={styles.bottomBar}>
-      <TouchableOpacity // Sử dụng TouchableOpacity thay thế cho Button
+      <TouchableOpacity 
           style={styles.button}
           onPress={() => {
-            // Handle button press
+
           }}
         >
           <Image
@@ -104,7 +109,7 @@ const HomeScreen = () => {
         <TouchableOpacity
           style={styles.button}
           onPress={() => {
-            // Handle button press
+
           }}
         >
           <Image
@@ -115,7 +120,7 @@ const HomeScreen = () => {
         <TouchableOpacity
           style={styles.addButton}
           onPress={() => {
-            // Handle button press
+
           }}
         >
           <Image
@@ -126,7 +131,7 @@ const HomeScreen = () => {
         <TouchableOpacity
           style={styles.button}
           onPress={() => {
-            // Handle button press
+
           }}
         >
           <Image
@@ -137,7 +142,6 @@ const HomeScreen = () => {
         <TouchableOpacity
           style={styles.button}
           onPress={() => {
-            // Handle button press
           }}
         >
           <Image
@@ -159,25 +163,25 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 10,
-    marginLeft: 10, // Điều chỉnh vị trí tiêu đề tùy ý
+    marginLeft: 10, 
   },
   category: {
-    width: 264, // Điều chỉnh kích thước nút danh mục tùy ý
-    height: 326, // Điều chỉnh kích thước nút danh mục tùy ý
+    width: 264, 
+    height: 326, 
     padding: 10,
     borderRadius: 5,
     backgroundColor: 'white',
-    marginRight: 10, // Thêm khoảng cách giữa các danh mục
-    alignItems: 'center', // Căn giữa nội dung ngang
+    marginRight: 10, 
+    alignItems: 'center', 
   },
   categoryImage: {
-    width: 264, // Điều chỉnh kích thước hình ảnh tùy ý
-    height: 326, // Điều chỉnh kích thước hình ảnh tùy ý
+    width: 264, 
+    height: 326, 
   },
   categoryText: {
     fontSize: 16,
     fontWeight: 'bold',
-    marginTop: 5, // Thêm khoảng cách giữa hình ảnh và văn bản
+    marginTop: 5, 
 },
   bottomBar: {
     height: 50,
@@ -224,14 +228,14 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   searchIcon: {
-    width: 20, // Adjust the width and height as needed
+    width: 20, 
     height: 20,
     marginRight: 10,
   },
   filterIcon: {
-    width: 60, // Adjust the width and height as needed
+    width: 60, 
     height: 60,
-    marginLeft: 220, // Add margin to separate it from the title
+    marginLeft: 220, 
     marginTop: 10,
   },
   newcategory: {
